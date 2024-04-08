@@ -11,9 +11,11 @@ export default function produkter() {
     <main>
         <Navicon />
 
-        <div className="flex justify-center items-center min-h-screen w-screen">
+        <div className="flex justify-center items-center min-h-screen w-screen flex-col gap-10 p-10">
             <Hero />
-            <div className="grid grid-cols-2 w-screen">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-5">
+                <Produkter />
+                <Produkter />
                 <Produkter />
             </div>
         </div>

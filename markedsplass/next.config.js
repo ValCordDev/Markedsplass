@@ -13,6 +13,9 @@ module.exports = {
         {
           hostname: 'i.ibb.co',
         },
+        {
+          hostname: 'images.unsplash.com',
+        }
       ],
     },
   }

@@ -2,7 +2,9 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <div>
+        <h1 className="flex flex-row text-5xl font-bold">markedsplass<div className=" text-blue-700">.</div></h1>
+    </div>
   )
 }
 
