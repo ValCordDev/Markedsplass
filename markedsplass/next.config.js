@@ -7,6 +7,12 @@ module.exports = {
         {
           hostname: 'www.iris-salten.no',
         },
+        {
+          hostname: 'i.imgur.com',
+        },
+        {
+          hostname: 'i.ibb.co',
+        },
       ],
     },
   }

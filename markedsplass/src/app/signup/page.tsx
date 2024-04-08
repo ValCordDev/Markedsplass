@@ -7,16 +7,15 @@ import Signup from './Signup';
 export default function Changeme() {
   return (
     <main>
-        <Navicon />
-
-        <div className="flex justify-center items-center h-screen w-screen">
-            <div className="grid grid-cols-2 w-screen">
-                <Signup />
-                <div className="flex text-2xl font-bold justify-center items-center">
-                <Image src={"https://www.iris-salten.no/getfile.php/1345570-1694073381/Bilder%20IRIS%20Salten/Artikkelbilder/HUSHOLDNING/Bruktmarkedkit/Jente%20p%C3%A5%20bruktmarked.jpg%20%28content_full_width%29.jpg"} alt="Bruktvaremarked" width={1000} height={1000}></Image>
-                </div>
-            </div>
+      <Navicon />
+      <div className="flex justify-center items-center h-screen w-screen">
+        <div className="grid lg:grid-cols-2 w-screen h-screen">
+          <Signup />
+          <div className="flex text-2xl font-bold justify-center items-center overflow-hidden bg-slate-200">
+            <Image src={'https://i.ibb.co/rfJD3Sw/arerajfja.png'} alt="Sale" width={200} height={200} className=" shadow-2xl rounded-full flex justify-center items-center"></Image>
+          </div>
         </div>
+      </div>
     </main>
   );
 }

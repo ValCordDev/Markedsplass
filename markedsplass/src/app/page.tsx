@@ -9,10 +9,10 @@ export default function Home() {
       <Navicon />
 
       <div className="flex justify-center items-center h-screen w-screen">
-        <div className="grid md:grid-cols-2 w-screen h-screen">
+        <div className="grid lg:grid-cols-2 w-screen h-screen">
           <Login />
-          <div className="flex text-2xl font-bold justify-center items-center overflow-hidden bg-blue-50">
-            <h1 className="text-2xl text-black">markedsplass.no</h1>
+          <div className="flex text-2xl font-bold justify-center items-center overflow-hidden bg-slate-200">
+            <Image src={'https://i.ibb.co/rfJD3Sw/arerajfja.png'} alt="Sale" width={200} height={200} className=" shadow-2xl rounded-full flex justify-center items-center"></Image>
           </div>
         </div>
       </div>
