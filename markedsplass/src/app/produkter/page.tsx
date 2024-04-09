@@ -37,7 +37,7 @@ export default function produkter() {
         { user &&
           <div className='w-screen absolute flex justify-end p-4 hover:cursor-pointer'>
             <div className='w-14'>
-              <img src={user.photoURL} alt="" className='rounded-full flex justify-center items-center shadow-lg border border-spacing-10 border-gray-800' />
+              <img src={user.photoURL} alt="" className='rounded-full flex justify-center items-center shadow-lg border border-spacing-10 border-gray-800 hover:shadow-2xl' />
             </div>
           </div>
         }

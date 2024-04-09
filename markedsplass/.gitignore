@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sanity files
+/src/database/sanity.ts
+
+# firebase files
+/src/app/firebase.ts
