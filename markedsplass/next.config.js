@@ -1,3 +1,5 @@
+const { hostname } = require('os');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
@@ -15,7 +17,10 @@ module.exports = {
         },
         {
           hostname: 'images.unsplash.com',
-        }
+        },
+        {
+          hostname: 'api.sanity.io',
+        },
       ],
     },
   }
