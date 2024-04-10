@@ -1,36 +1,36 @@
 'use client'
 
 import { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 
 const Inputs = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth)
 
-  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth)
   const router = useRouter()
 
-  const handleSignUp = async () => {
+  const handleSignIn = async () => {
     try {
-      const res = await createUserWithEmailAndPassword(email, password)
+      const res = await signInWithEmailAndPassword(email, password)
       console.log(res)
       setEmail('')
       setPassword('')
-      router.push('../logginn')
+      router.push('../')
     } catch(e){
       console.error(e)
     }
   }
 
   return (
-    <div className="flex justify-center flex-col gap-5">
+    <form className="flex justify-center flex-col gap-5">
       <input
-        type="mail"
+        type="email" // Change "mail" to "email"
         className="input input-bordered bg-white"
-        placeholder="Email"
+        placeholder="Mail"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
@@ -43,11 +43,11 @@ const Inputs = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button className="text-white hover:bg-blue-700 duration-300 rounded-lg p-3 text-base focus:border-2 bg-blue-600" type='submit' onClick={handleSignUp}>
-        Lag ny bruker
+      <button className="text-white hover:bg-blue-700 duration-300 rounded-lg p-3 text-base focus:border-2 bg-blue-600" type='submit' onClick={handleSignIn}>
+        Logg inn
       </button>
-    </div>
+    </form>
   );
-}
+};
 
-export default Inputs
+export default Inputs;
