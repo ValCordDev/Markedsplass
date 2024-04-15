@@ -2,16 +2,14 @@
 
 import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
+
 import Navicon from './Navicon';
-import React, { useEffect, useState } from 'react';
 import Hero from './Hero';
+import Dropdown from './Dropdown';
+import React, { useEffect, useState } from 'react';
 import useSession  from '@/hooks/useSession';
-import { PROJECT_ID, DATASET, QUERY, QUERY2 } from '@/database/santity';
+import { PROJECT_ID, DATASET, QUERY } from '@/database/santity';
 import imageUrlBuilder from "@sanity/image-url";
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { signOut } from 'firebase/auth';
-import { auth } from './firebase'; 
-import Link from 'next/link';
 
 // Setup the imageUrlBuilder
 const builder = imageUrlBuilder({
@@ -38,16 +36,7 @@ export default function produkter() {
   return (
     <main>
         <Navicon />
-        { user &&
-          <div className='w-screen absolute flex justify-end p-4 hover:cursor-pointer items-center'>
-            <Link href="http://localhost:3333" passHref className='btn btn-ghost duration-300 border-none text-gray-700 text-sm mr-2'>
-                + Legg til produkt
-            </Link>
-            <div className='w-14' onClick={() => signOut(auth)}>
-              <img src={user.photoURL || 'https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png'} alt="" className='rounded-full flex justify-center items-center shadow-lg border border-spacing-10 border-gray-800 hover:shadow-2xl transition-shadow duration-300' />
-            </div>
-          </div>
-        }
+        <Dropdown />
         <div className="flex items-center min-h-screen w-screen flex-col gap-10 p-20">
             <Hero />
             <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-5">
@@ -66,11 +55,13 @@ export default function produkter() {
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
                       <a>
                         <span className="absolute inset-0"></span>
-                        {produkt.title} <br />
+                        {produkt.title} 
+                        <br />
                         <span className='text-gray-300 font-semibold text-sm'>
-                          {produkt.pris} kr
+                          {produkt.pris.toLocaleString()} kr
                         </span>
-                        <div className=" bg-none border justify-center items-center flex text-xs rounded-full font-base m-2 p-1">Kamera</div>
+                        <br />
+                        <div className="badge text-white font-light text-xs">Kamera</div>
                       </a>
                     </h3>
                   </div>
